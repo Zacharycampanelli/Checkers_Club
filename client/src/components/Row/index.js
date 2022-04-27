@@ -1,7 +1,7 @@
 
    
-import { fixFirst } from '../utils'
-import Square from './Square'
+import { fixFirst } from '../../utils'
+import Square from '../Square'
 
 function Row(props) {
     const makeSquare = fixFirst(makeSquareForRow, props.number)
