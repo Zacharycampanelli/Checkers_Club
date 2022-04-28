@@ -8,7 +8,7 @@ const typeDefs = gql`
     friendCount: Int
     winCount: Int
     lossCount: Int
-    savedFriends: [Friends]
+    friends: [User]
 
   }
 
@@ -19,6 +19,8 @@ const typeDefs = gql`
 
   type Query {
       me: User
+      users: [User]
+      user(username: String!): User
   }
 
   type Mutation {
