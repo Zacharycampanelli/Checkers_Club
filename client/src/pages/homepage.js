@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import Login from './Login';
+import Login from './login';
 import Signup from './signup';
 import Board from '../components/Board';
 

@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import Homepage from './pages/homepage';
-import Login from './pages/Login';
+import Login from './pages/login';
 import Game from './pages/gamepage';
 import Highscore from './pages/highscore';
 import Signup from './pages/signup';
