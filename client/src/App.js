@@ -1,43 +1,55 @@
-import './App.css';
-import { fixFirst } from './utils'
-import Row from './components/Row'
-import BlackPiece from './components/Pieces/BlackPiece'
-import RedPiece from './components/Pieces/RedPiece'
-import BlackKing from './components/Pieces/BlackKing'
-import RedKing from './components/Pieces/RedKing'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+import Homepage from './pages/homepage';
+import Login from './pages/Login';
+import Game from './pages/gamepage';
+import Highscore from './pages/highscore';
+import Signup from './pages/signup';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 function App() {
-  const data = [
-    [null, BlackPiece, null, BlackPiece, null, BlackPiece, null, BlackPiece],
-    [BlackPiece, null, BlackPiece, null, BlackPiece, null, BlackPiece, null],
-    [null, BlackPiece, null, BlackPiece, null, BlackPiece, null, BlackPiece],
-    [null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null],
-    [RedPiece, null, RedPiece, null, RedPiece, null, RedPiece, null],
-    [null, RedPiece, null, RedPiece, null, RedPiece, null, RedPiece],
-    [RedPiece, null, RedPiece, null, RedPiece, null, RedPiece, null]
-  ]
-
-  const makeRow = fixFirst(makeRowIn, data.length)
-
   return (
-    <table className='no-border'>
-      <thead>
-        <tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th></th></tr>
-      </thead>
-      <tbody>
-        {data.map(makeRow)}
-      </tbody>
-      <tfoot>
-        <tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th><th></th></tr>
-      </tfoot>
-    </table>
-  )
-}
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Homepage />} exact />
+              <Route path="/login" element={<Login />} exact />
+              <Route path="/signup" element={<Signup />} exact />
+            </Routes>
+          </div>
 
-function makeRowIn(numberOfRows, rowData, index) {
-  const number = numberOfRows - index;
-
-  return <Row key={number.toString()} number={number} data={rowData} />;
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
 }
 
 export default App;

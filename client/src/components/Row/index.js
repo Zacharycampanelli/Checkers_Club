@@ -1,6 +1,6 @@
 
    
-import { fixFirst } from '../../utils'
+import { fixFirst } from '../../utils/fixFirst'
 import Square from '../Square'
 
 function Row(props) {
