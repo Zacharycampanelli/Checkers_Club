@@ -13,6 +13,10 @@ const db = require('./config/connection');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// socket io code
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 const startServer = async () => {
   const server = new ApolloServer({
     typeDefs,
@@ -36,9 +40,12 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+
+io.on('connection', (socket) => {
+  socket.on('chat message', msg => {
+    io.emit('chat message', msg);
+  });
+});
 
 db.once('open', () => {
   app.listen(PORT, () => {
