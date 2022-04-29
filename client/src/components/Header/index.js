@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 const Header = () => {
-  return (
-    <header className="">
-      <div className="">
-        <Link to="/">
-          <h1>Checkers_Club</h1>
-        </Link>
 
-        <nav className="">
-        {Auth.loggedIn() ? (
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
+  return (
+    <header className="bg-secondary mb-4 py-2 flex-row align-center">
+      <div className="container flex-row justify-space-between-lg justify-center align-center">
+      <Link to="/">Checkers</Link>
+
+        <nav className="text-center">
+          {Auth.loggedIn() ? (
             <>
-            
+              {/* <Link to="/profile">Me</Link> */}
               <a href="/" onClick={logout}>
                 Logout
-              </a>
+                </a>
             </>
           ) : (
             <>
@@ -28,11 +32,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-const logout = event => {
-  event.preventDefault();
-  Auth.logout();
 };
 
 export default Header;
