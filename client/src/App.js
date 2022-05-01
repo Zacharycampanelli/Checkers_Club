@@ -45,7 +45,6 @@ function App() {
               <Route path="/signup" element={<Signup />} exact />
             </Routes>
           </div>
-
           <Footer />
         </div>
       </Router>
