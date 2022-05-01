@@ -4,7 +4,7 @@ import Auth from '../utils/auth';
 import Login from './login';
 import Signup from './signup';
 import { Text, Button, ButtonGroup, Image, Stack } from '@chakra-ui/react';
-import NavBar from '../components/NavBar';
+// import NavBar from '../components/NavBar';
 import checkerpieces from '../assets/checkerspieces.png';
 
 const Homepage = () => {
