@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
-import Auth from '../../utils/auth';
+import Auth from '../../pages/utils/auth';
 // import Logo from '../Pieces/BlackPiece';
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);

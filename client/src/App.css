@@ -1,5 +1,8 @@
 
-
+* { 
+  font-family: "Montserrat", sans-serif; 
+  font-weight: 600
+}
 .no-border {
   border-collapse: collapse;
 }
@@ -35,7 +38,7 @@
   font-family: 'bungee'
 }
 
-@font-face {
-  font-family: 'Bungee';
-  src: local('Bungee'), url('./Fonts/Bungee-Regular.ttf'), format('truetype');
+header {
+  background-color: white;
+  vertical-align: bottom;
 }

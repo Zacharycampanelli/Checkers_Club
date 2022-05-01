@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { LOGIN_USER } from '../utils/mutations';
-
+import { HStack, Text, Button, ButtonGroup, Image, Stack, Box } from '@chakra-ui/react';
+import leftStack from '../assets/leftstack.png'
+import rightStack from '../assets/rightstack.png'
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
 
@@ -40,10 +42,12 @@ const Login = (props) => {
   return (
     <main className='flex-row justify-center mb-4'>
       <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Login</h4>
+        <HStack w="100%" spacing='4vw'>
+        <Image src={leftStack} />
+        <Box className='card' bg="black" w="70vw">
+          <Text className='card-header' fontSize="4xl" color="white" bg="red">Login</Text>
           <div className='card-body'>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleFormSubmit} display="flex" align="center" justify="center">
               <input
                 className='form-input'
                 placeholder='Your email'
@@ -62,13 +66,15 @@ const Login = (props) => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='btn d-block w-100' type='submit'>
+              <Button className='btn d-block w-100'  justifySelf="center" type='submit'>
                 Submit
-              </button>
+              </Button>
             </form>
             {error && <div>Login failed</div>}
           </div>
-        </div>
+        </Box>
+        <Image src={rightStack} ml={40}/>
+       </HStack>
       </div>
     </main>
   );

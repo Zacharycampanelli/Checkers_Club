@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Header from './Components/Header';
+import Header from './Components/Header'
 import Footer from './Components/Footer';
 
 import Homepage from './pages/homepage';
