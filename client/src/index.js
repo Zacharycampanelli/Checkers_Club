@@ -17,8 +17,18 @@ const theme = extendTheme({
   components: {
     Button: {
       baseStyle: {
-        bg: 'black'
-      }
+        bg: '',
+        color: 'black',
+        fontWeight: 'bold',
+        
+      },
+      sizes: {
+        xl: {
+          h: '56px',
+          fontSize: 'lg',
+          px: '320px',
+        },
+      },
     }
   }
 })

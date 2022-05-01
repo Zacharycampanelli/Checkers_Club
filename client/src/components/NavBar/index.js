@@ -2,7 +2,7 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
 import Auth from '../../utils/auth';
-import Logo from '../Pieces/BlackPiece';
+// import Logo from '../Pieces/BlackPiece';
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -10,10 +10,10 @@ const NavBar = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <Logo
+      {/* <Logo
         w="100px"
         color={["white", "white", "primary.500", "primary.500"]}
-      />
+      /> */}
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
