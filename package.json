@@ -9,14 +9,15 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build",
     "seed": "cd server && npm run seed"
-    
-   
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^6.2.0",
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "workbox-webpack-plugin": "^6.5.3"
   }
 }
