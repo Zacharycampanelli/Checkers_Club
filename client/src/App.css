@@ -7,10 +7,9 @@
   height: 83px;
 }
 
-.light {
-  background-color: #FFCE9E;
-}
-
-.dark {
-  background-color: #D18B47;
+#app{
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: gray;
 }
