@@ -15,12 +15,16 @@ const Header = () => {
       <Link to="/">Checkers</Link>
 
         <nav className="text-center">
+          <Link to="/game">Play Checkers</Link>
+          <Link to="/chat">Join A Chatroom</Link>
+          <Link to="/scores">Leaterboards</Link>
+          <Link to="/howto">How To Play</Link>
           {Auth.loggedIn() ? (
             <>
               {/* <Link to="/profile">Me</Link> */}
-              <a href="/" onClick={logout}>
+              <Link to="/" onClick={logout}>
                 Logout
-                </a>
+                </Link>
             </>
           ) : (
             <>

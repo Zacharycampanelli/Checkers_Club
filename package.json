@@ -9,8 +9,6 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build",
     "seed": "cd server && npm run seed"
-    
-   
   },
   "keywords": [],
   "author": "",
@@ -18,5 +16,10 @@
   "devDependencies": {
     "@faker-js/faker": "^6.2.0",
     "concurrently": "^7.1.0"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
+    "@fontsource/bungee": "^4.5.7",
+    "antd": "^4.20.2"
   }
 }

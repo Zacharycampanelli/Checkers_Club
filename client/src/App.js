@@ -13,6 +13,12 @@ import Game from './pages/gamepage';
 import Highscore from './pages/highscore';
 import Signup from './pages/signup';
 
+import { Box, Link, Image } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+
+import chessboardPattern from './assets/chessboard-pattern-light.png'  
+import "@fontsource/bungee"
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -34,6 +40,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <Box class="maincontainer" backgroundImage={chessboardPattern}>
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
@@ -41,15 +48,16 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Homepage />} exact />
+              
               <Route path="/login" element={<Login />} exact />
               <Route path="/signup" element={<Signup />} exact />
             </Routes>
           </div>
-
+         
           <Footer />
         </div>
       </Router>
-    </ApolloProvider>
+    </ApolloProvider></Box>
   );
 }
 
