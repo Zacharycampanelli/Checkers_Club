@@ -42,3 +42,8 @@ header {
   background-color: white;
   vertical-align: bottom;
 }
+
+.homeGameButton {
+  font-size: 20px;
+  color: red;
+}
