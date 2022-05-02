@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Header from './Components/Header'
-import Footer from './Components/Footer';
+import Header from './components/Header'
+import Footer from './components/Footer';
 
 import Homepage from './pages/homepage';
 import Login from './pages/login';
@@ -23,7 +23,7 @@ import "@fontsource/bungee"
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
