@@ -4,12 +4,41 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import { extendTheme, ChakraProvider } from '@chakra-ui/react';
+
+const theme = extendTheme({
+  semanticTokens: {
+    colors: {
+      white: '#fff',
+      black: '#000',
+      red: '#c41f12',
+      grey: '#9c9c9c',
+    },
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        bg: '',
+        color: 'black',
+        fontWeight: 'bold',
+      },
+      sizes: {
+        xl: {
+          h: '56px',
+          fontSize: 'lg',
+          px: '320px',
+        },
+      },
+    },
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>
 );
 
