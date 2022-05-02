@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 
 import Homepage from './pages/homepage';
 import Login from './pages/login';
-import Game from './pages/gamepage';
 import HowTo from './pages/howto';
 // import Highscore from './pages/highscore';
 import Signup from './pages/signup';
@@ -19,6 +18,7 @@ import Signup from './pages/signup';
 
 //  import chessboardPattern from '.assets/chessboard-pattern-light.png'
 import "@fontsource/bungee"
+import Gamepage from './pages/gamepage';
 
 
 
@@ -31,7 +31,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : '', 
     },
   };
 });
@@ -53,7 +53,7 @@ export default function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Homepage />}  />
-              {/* <Route path="/game" element={} exact/> */}
+              <Route path="/game" element={<Gamepage/>}/>
               {/* <Route path="/chat" element={} exact/> */}
               {/* <Route path="/scores" element={} exact/> */}
               <Route path="/howto" element={<HowTo />} />
