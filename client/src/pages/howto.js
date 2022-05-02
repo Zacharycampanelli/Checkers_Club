@@ -1,12 +1,13 @@
 import React from 'react';
-import { Flex, Spacer, Box, Text } from '@chakra-ui/react';
+import { Flex, Spacer, Box, Text, Image } from '@chakra-ui/react';
+import playCheckers from '../assets/play-checkers.jpeg'
 
 const HowTo = () => {
   return (
     <main>
         <Flex direction="column">
       <Flex direction="row">
-        <Box>
+        <Box width="100%">
           <Text fontSize='6xl'>Checkers Rules</Text>
           <Text>
             **Game Pieces and Board** Checkers is a board game played between two people on an 8x8 checked board like
@@ -15,10 +16,10 @@ const HowTo = () => {
             on the board.
             <br />
             Each Checkers player has different colored pieces. Sometimes the pieces are black and red or red and white.
-            <br />
+            <br /><br />
             **Taking a Turn** Typically the darker color pieces moves first. Each player takes their turn by moving a
             piece. Pieces are always moved diagonally and can be moved in the following ways:
-            <br />
+            <br /><br />
               <li>Diagonally in the forward direction (towards the opponent) to the next dark square.</li>
               <li>
                 If there is one of the opponent's pieces next to a piece and an empty space on the other side, you jump
@@ -34,6 +35,9 @@ const HowTo = () => {
             more pieces or can't move (even if he/she still has pieces). If neither player can move then it is a draw or
             a tie.
           </Text>
+        </Box>
+        <Box w="100%" mt="20" >
+            <Image src={playCheckers} />
         </Box>
         </Flex>
         <br />
