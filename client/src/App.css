@@ -28,7 +28,7 @@
 }
 
 .maincontainer {
-  /* background-image: url("./assets/chessboard-pattern-light.png"); */
+  background-image: url("./assets/chessboard-pattern-light.png");
   height: 100vh;
   width: 100vw;
   background-size: cover;
