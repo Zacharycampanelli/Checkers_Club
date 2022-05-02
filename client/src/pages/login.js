@@ -6,37 +6,39 @@ import { HStack, Text, Button, ButtonGroup, Image, Stack, Box } from '@chakra-ui
 import leftStack from '../assets/leftstack.png'
 import rightStack from '../assets/rightstack.png'
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-  const [login, {error}] = useMutation(LOGIN_USER);
-
-  // update state based on form input changes
-  const handleChange = (event) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const { data } = await login({
-        variables: {...formState}
-      });
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-    // clear form values
-    // setFormState({
-    //   email: '',
-    //   password: '',
-    // });
+
+    try {
+      const { data } = await login({variables: {...userFormData}});
+      Auth.login(data.login.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
   };
 
   return (
@@ -54,8 +56,8 @@ const Login = (props) => {
                 name='email'
                 type='email'
                 id='email'
-                value={formState.email}
-                onChange={handleChange}
+                value={userFormData.email}
+                onChange={handleInputChange}
               />
               <input
                 className='form-input'
@@ -63,8 +65,8 @@ const Login = (props) => {
                 name='password'
                 type='password'
                 id='password'
-                value={formState.password}
-                onChange={handleChange}
+                value={userFormData.password}
+                onChange={handleInputChange}
               />
               <Button className='btn d-block w-100'  justifySelf="center" type='submit'>
                 Submit
