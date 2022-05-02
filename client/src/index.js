@@ -40,7 +40,7 @@ const theme = extendTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-  <ChakraProvider theme={theme}>
+  <ChakraProvider theme={theme}/>
     <App />
 
   </React.StrictMode>,
@@ -57,8 +57,6 @@ serviceWorkerRegistration.unregister();
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-  </ChakraProvider>
-  </React.StrictMode>
-);
+  // </React.StrictMode>
 
 
