@@ -15,7 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^6.2.0",
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "workbox-webpack-plugin": "^6.5.3"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
