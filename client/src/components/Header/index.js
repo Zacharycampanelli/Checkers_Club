@@ -18,7 +18,7 @@ const Header = () => {
         <nav className="text-center align-text-bottom">
           <Link to="/game">Play Checkers</Link>
           <Link to="/chat">Join A Chatroom</Link>
-          <Link to="/scores">Leatherboards</Link>
+          <Link to="/scores">Leaderboards</Link>
           <Link to="/howto">How To Play</Link>
           {Auth.loggedIn() ? (
             <>
