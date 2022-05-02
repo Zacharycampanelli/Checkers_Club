@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
-import { HStack, Text, Button, ButtonGroup, Image, Stack, Box } from '@chakra-ui/react';
+import { HStack, Text, Button, Image, Box } from '@chakra-ui/react';
 import leftStack from '../assets/leftstack.png'
 import rightStack from '../assets/rightstack.png'
 const Signup = () => {
  // set initial form state
  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
  // set state for form validation
- const [validated] = useState(false);
+//  const [validated] = useState(false);
  // set state for alert
  const [showAlert, setShowAlert] = useState(false);
  const [addUser, { error }] = useMutation(ADD_USER);;

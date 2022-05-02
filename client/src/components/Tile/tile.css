@@ -1,15 +1,17 @@
 .tile {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   display: grid;
   place-content: center;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
 }
 .tile .checkerpiece{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40px;
+  background-size: 80px;
 }
 
 .tile .checkerpiece:hover{
@@ -22,11 +24,11 @@
 
 
 .red-tile{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .black-tile{
-  background-color: green;
+  background-color: rgba(0, 62, 123, 0.947);
 }
 
 .tile .image {
