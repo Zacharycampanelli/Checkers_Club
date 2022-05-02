@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { LOGIN_USER } from '../utils/mutations';
-import { HStack, Text, Button, ButtonGroup, Image, Stack, Box } from '@chakra-ui/react';
+import { HStack, Text, Button, Image, Box } from '@chakra-ui/react';
 import leftStack from '../assets/leftstack.png'
 import rightStack from '../assets/rightstack.png'
 const Login = (props) => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-  const [validated] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+  // const [validated] = useState(false);
+  const [ setShowAlert] = useState(false);
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {

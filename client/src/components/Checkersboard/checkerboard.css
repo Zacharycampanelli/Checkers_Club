@@ -1,9 +1,12 @@
 #checkersboard {
   display:grid;
-  grid-template-columns: repeat(8, 50px);
-  grid-template-rows: repeat(8, 50px);
-  background-color: white;
-  width: 400px;
-  height: 400px;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
+  background-color: rgb(255, 255, 255);
+  width: 800px;
+  height: 800px;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
 }
+
 

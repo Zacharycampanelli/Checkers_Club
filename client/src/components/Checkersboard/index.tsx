@@ -59,10 +59,8 @@ export default function Checkersboard () {
   function grabPiece (e: React.MouseEvent) {
   const element = e.target as HTMLElement;
   if(element.classList.contains('checkerpiece')){
-    console.log(e);
-
-    const x = e.clientX -25;
-    const y = e.clientY -25;
+    const x = e.clientX -50;
+    const y = e.clientY -50;
     element.style.position = 'absolute';
     element.style.left =`${x}px`;
     element.style.top =`${y}px`;
@@ -74,8 +72,8 @@ export default function Checkersboard () {
   // move piece
   function movePiece(e: React.MouseEvent){
     if(activePiece){ 
-      const x = e.clientX -25;
-      const y = e.clientY -25;
+      const x = e.clientX -50;
+      const y = e.clientY -50;
       activePiece.style.position = 'absolute';
       activePiece.style.left =`${x}px`;
       activePiece.style.top =`${y}px`;

@@ -16,7 +16,7 @@
   display: grid;
   place-content: center;
   height: 100vh;
-  background-color: gray;
+  background-color: rgb(128, 128, 128);
 }
 
 .light {

@@ -13,7 +13,7 @@ import HowTo from './pages/howto';
 // import Highscore from './pages/highscore';
 import Signup from './pages/signup';
 
- import { Box, Link, Image } from '@chakra-ui/react'
+ import { Box } from '@chakra-ui/react'
 // import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 //  import chessboardPattern from '.assets/chessboard-pattern-light.png'
