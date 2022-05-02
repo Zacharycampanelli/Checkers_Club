@@ -1,9 +1,0 @@
-<svg 
-    width="64px" 
-    height="64px" 
-    viewBox="-34 -34 68 68" 
-    xmlns="http://www.w3.org/2000/svg" 
-    xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>Checkers black man</title>
-        <circle id="man" cx="0" cy="0" r="32" stroke="#fff" stroke-width="4" fill="#000" />
-</svg>

@@ -1,3 +1,8 @@
+
+* { 
+  font-family: "Montserrat", sans-serif; 
+  font-weight: 600
+}
 .no-border {
   border-collapse: collapse;
 }
@@ -7,10 +12,33 @@
   height: 83px;
 }
 
+#app{
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: gray;
+}
+
 .light {
   background-color: #FFCE9E;
 }
 
 .dark {
   background-color: #D18B47;
+}
+
+.maincontainer {
+  background-image: url("./assets/chessboard-pattern-light.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.title {
+  font-family: 'bungee'
+}
+
+header {
+  background-color: white;
+  vertical-align: bottom;
 }
