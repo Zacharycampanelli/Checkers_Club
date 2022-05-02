@@ -16,7 +16,9 @@ const Header = () => {
       <Link to="/">Checkers</Link>
 
         <nav className="text-center align-text-bottom">
+          {Auth.loggedIn() ? (<>
           <Link to="/game">Play Checkers</Link>
+          </>) : (null)}
           <Link to="/chat">Join A Chatroom</Link>
           <Link to="/scores">Leaderboards</Link>
           <Link to="/howto">How To Play</Link>
