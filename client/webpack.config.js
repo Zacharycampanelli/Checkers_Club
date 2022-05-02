@@ -1,35 +1,16 @@
-const {GenerateSW} = require('workbox-webpack-plugin');
+// Inside of webpack.config.js:
+const {InjectManifest} = require('workbox-webpack-plugin');
 
 module.exports = {
   // Other webpack config...
   plugins: [
     // Other plugins...
-    new GenerateSW({
+    new InjectManifest({
       // These are some common options, and not all are required.
       // Consult the docs for more info.
       exclude: [/.../, '...'],
       maximumFileSizeToCacheInBytes: ...,
-      navigateFallback: '...',
-      runtimeCaching: [{
-        // Routing via a matchCallback function:
-        urlPattern: ({request, url}) => ...,
-        handler: '...',
-        options: {
-          cacheName: '...',
-          expiration: {
-            maxEntries: ...,
-          },
-        },
-      }, {
-        // Routing via a RegExp:
-        urlPattern: new RegExp('...'),
-        handler: '...',
-        options: {
-          cacheName: '...',
-          plugins: [..., ...],
-        },
-      }],
-      skipWaiting: ...,
+      swSrc: 'service-worker.js',
     }),
   ],
 };
