@@ -1,5 +1,7 @@
-import { Container } from "react-bootstrap";
+import Checkersboard from "../components/Checkersboard";
 
 export default function Gamepage(){
-  return (<Container></Container>)
+  return (<div>
+  <Checkersboard/>
+  </div>)
 }
