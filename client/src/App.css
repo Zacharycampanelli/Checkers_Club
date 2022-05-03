@@ -29,9 +29,10 @@
 
 .maincontainer {
   background-image: url("./assets/chessboard-pattern-light.png");
-  height: 100vh;
+  height: 140vh;
   width: 100vw;
   background-size: cover;
+  background-repeat: repeat;
 }
 
 .title {
@@ -46,4 +47,9 @@ header {
 .homeGameButton {
   font-size: 20px;
   color: red;
+}
+
+#home {
+  margin-left: 0;
+  float: left;
 }

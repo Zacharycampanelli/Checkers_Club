@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Spacer, Box, Text, Image } from '@chakra-ui/react';
 import playCheckers from '../assets/play-checkers.jpeg'
-
+import playCheckers2 from '../assets/play-checkers2.png'
 const HowTo = () => {
   return (
     <main>
@@ -36,9 +36,14 @@ const HowTo = () => {
             a tie.
           </Text>
         </Box>
-        <Box w="100%" mt="20" >
+        <Flex direction="column">
+        <Box w="90%" ml="20" mt="20" >
             <Image src={playCheckers} />
         </Box>
+        <Box w="90%" ml="20" mt="20" >
+            <Image src={playCheckers2} />
+        </Box>
+        </Flex>
         </Flex>
         <br />
         <Flex>
