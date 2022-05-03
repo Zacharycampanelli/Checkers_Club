@@ -29,11 +29,14 @@
 
 .maincontainer {
   background-image: url("./assets/chessboard-pattern-light.png");
-  height: 140vh;
   width: 100vw;
+  height: auto;
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: repeat;
 }
+
+
 
 .title {
   font-family: 'bungee'
