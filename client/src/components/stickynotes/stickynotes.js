@@ -28,6 +28,7 @@ function createNoteElement(id, content) {
   });
 
   element.addEventListener("dblclick", () => {
+    // eslint-disable-next-line no-restricted-globals
     const doDelete = confirm(
       "Are you sure you wish to delete this sticky note?"
     );
