@@ -4,7 +4,7 @@
 
 ![license badge](https://img.shields.io/badge/license-mit-green)
 
-A MERN Stack application which allows the user to ...
+A MERN Stack application which allows the user to learn to play checkers as well as practice the game
 
 ## Table of Contents
 
@@ -12,20 +12,20 @@ A MERN Stack application which allows the user to ...
 - [Usage](#Usage)
 - [License](#License)
 - [Contributing](#Contributing)
-- [To-Dos](#To-Dos)
+- [Future Developments](#Future-Developments)
+- [Technologies Used](#Technologies-Used)
 - [Reference](#Reference)
 - [Questions](#Questions)
 
 ## Installation
 
-Clone this repository to your computer. Navigate to the root folder then run `npm init` or `npm init -y`. Then run either `npm i` or `npm install` to install the local dependencies, which will also do so in the subdirectories `client` and `server`. Next, navigate into the `server` subdirectory and locate the file `.env_sample`. Modify its contents as specified, then save and rename the file so it is called `.env`. Then return to the root folder and run the command `npm start`.
+Clone this repository to your computer. Navigate to the root folder then run `npm init` or `npm init -y`. Then run either `npm i` or `npm install` to install the local dependencies, which will also do so in the subdirectories `client` and `server`. Next, navigate into the `server` subdirectory and locate the file `.env_sample`. Modify its contents as specified, then save and rename the file so it is called `.env`. 
 
 ## Usage
+From the root folder, run the command `npm start`. Also check out the deployed application on heroku with the link below.
 
 ![screenshot](public/images/Screenshot_1.png)  
-![screenshot](public/images/Screenshot_2.png)  
-![screenshot](public/images/Screenshot_3.png)  
-![screenshot](public/images/Screenshot_4.png)
+
 
 ## License
 
@@ -46,9 +46,26 @@ Anyone is able to contribute to our project.
    `git push -u origin branch-name`
 5. Submit a pull request.
 
-## To-Dos
+## Future Developments 
 
--
+- Game Logic
+- Payment for custom pieces with Stripe
+- *****NOTES****
+- Use socket.io to allow for playing the game using two computers
+- Video Chat Functionality
+- Chat Rooms
+
+## Technologies Used
+- The MERN Stack (Mongoose, Express.js, React.js, Node.js)
+- Faker
+- Bcrypt
+- Dotenv
+- Graphql and Apollo Client
+- Chakra-UI
+- JWT-Decode
+- Typescript
+- PWA (service workers, webpack)
+
 
 ## References
 
@@ -56,6 +73,7 @@ React.js using Typescript tutorial on making a board game(Chess Game) -
 [Frontend Coding](https://www.youtube.com/watch?v=Iri__zwxwHg&list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj&index=1)
 [Sticky Notes](https://www.youtube.com/watch?v=Efo7nIUF2JY)
 [Create Progressive Web App With Heroku](https://create-react-app.dev/docs/making-a-progressive-web-app/)
+
 ## Questions
 
 If you have any questions, concerns, or comments, feel free to contact us:
@@ -67,4 +85,4 @@ If you have any questions, concerns, or comments, feel free to contact us:
 
 ## Link to Deployed Application
 
--[Heroku]()
+-[Heroku](https://secure-hamlet-91004.herokuapp.com/game)
