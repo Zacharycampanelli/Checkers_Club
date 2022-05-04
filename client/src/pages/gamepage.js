@@ -1,9 +1,11 @@
-import { Link, Text } from '@chakra-ui/react'
+import { Link, Text, Flex } from '@chakra-ui/react'
 import Checkersboard from "../components/Checkersboard";
+import StickyNotes from '../components/StickyNotes';
 
 export default function Gamepage(){
   return (
-  <div>
+  <Flex>
+    <div>
     <Checkersboard/>
     <Text>
       {' '}
@@ -11,6 +13,8 @@ export default function Gamepage(){
       Restart Game
       </Link>
     </Text>
-  </div>
+    </div>
+    <StickyNotes />
+  </Flex>
   )
 }
