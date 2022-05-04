@@ -14,9 +14,9 @@ const Footer = () => {
         <Text fontSize="lg" mr="2vw"  float='left'>
           &copy;{new Date().getFullYear()} &nbsp;
            <br/>Zachary Campanelli &nbsp;
-           Joeseph Campbell &nbsp;
+           Joseph Campbell &nbsp;
            <br />Teresa Campbell &nbsp;
-           Tresha Gaye
+           Tresha-Gaye Ustanny
         </Text> 
         <Flex justifyContent="right">
         {/* <Image src={Calendar} boxSize='5vw' mr="2vw"/> */}

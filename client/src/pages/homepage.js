@@ -12,7 +12,7 @@ const Homepage = () => {
   return (
     <main>
       <Stack direction="column" align="center">
-        <Text className="title" mb="8vh" color="black" textAlign="center" fontSize="7em">
+        <Text className="title" mb="8vh" color="black" textAlign="center" fontSize={{base : "2em", sm: "4em", lg: "7em"}}>
           Extreme Checkers
         </Text>
         {Auth.loggedIn() ? (
@@ -23,6 +23,7 @@ const Homepage = () => {
               // className="homeGameButton"
             // href="/game"
             color="white"
+            fontSize="4em"
             >
               START GAME!
             </Link>
@@ -34,7 +35,7 @@ const Homepage = () => {
           </>
         )}
       </Stack>
-      <Image src={checkerpieces} position="relative" bottom="150" float="right" boxSize="20em" />
+      <Image src={checkerpieces} position="relative" bottom="150" float="right" boxSize={{base: "12em", lg: "20em"}} />
     </main>
   );
 };
