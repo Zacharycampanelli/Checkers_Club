@@ -54,7 +54,8 @@ Anyone is able to contribute to our project.
 
 React.js using Typescript tutorial on making a board game(Chess Game) -
 [Frontend Coding](https://www.youtube.com/watch?v=Iri__zwxwHg&list=PLBmRxydnERkysOgOS917Ojc_-uisgb8Aj&index=1)
-
+[Sticky Notes](https://www.youtube.com/watch?v=Efo7nIUF2JY)
+[Create Progressive Web App With Heroku](https://create-react-app.dev/docs/making-a-progressive-web-app/)
 ## Questions
 
 If you have any questions, concerns, or comments, feel free to contact us:

@@ -1,9 +1,10 @@
 import './checkerboard.css';
 import Tile from '../Tile';
 
+
 const verticalAxis = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 const horizontalAxis = ['a','b','c','d','e','f','g','h'];
-
+const blackPiece = process.env.PUBLIC_URL +'assets/images/black.svg'
 interface Piece {
   image: string
   x: number
@@ -33,7 +34,7 @@ for(let i =0; i < 8; i++){
 //  starting position of the black checker pieces
 for(let i =0; i < 8; i++){
   // row 2 from y axis
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 0, y:2})
+  pieces.push({image: blackPiece,x: 0, y:2})
   pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 2, y:2})
   pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 4, y:2})
   pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 6, y:2})
