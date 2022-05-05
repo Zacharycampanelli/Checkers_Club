@@ -1,10 +1,13 @@
-import { Flex } from '@chakra-ui/react';
-import React from 'react'
+import { Flex, Textarea } from '@chakra-ui/react';
+import React, { useState } from 'react'
 
 const StickyNotes = () => {
     const notesContainer = document.getElementById("notes");
     const addNoteButton = document.getElementsByClassName(".add-note");
     const noteElement = null;
+
+    // Allows for the changing of the vertical size of the text area
+    const [resize, setResize] = useState('vertical')
     
     // if(addNoteButton) {
     //  addNoteButton.addEventListener("click", () => addNote());
@@ -37,33 +40,33 @@ const StickyNotes = () => {
         updateNote(id, element.value);
       });
     
-      element.addEventListener("dblclick", () => {
-        // eslint-disable-next-line no-restricted-globals
-        const doDelete = confirm(
-          "Are you sure you wish to delete this sticky note?"
-        );
+      // element.addEventListener("dblclick", () => {
+      //   // eslint-disable-next-line no-restricted-globals
+      //   const doDelete = confirm(
+      //     "Are you sure you wish to delete this sticky note?"
+      //   );
     
-        if (doDelete) {
-          deleteNote(id, element);
-        }
-      });
+      //   if (doDelete) {
+      //     deleteNote(id, element);
+      //   }
+      // });
     
       return element;
     }
     
-    function addNote() {
-      const notes = getNotes();
-      const noteObject = {
-        id: Math.floor(Math.random() * 100000),
-        content: "",
-      };
+    // function addNote() {
+    //   const notes = getNotes();
+    //   const noteObject = {
+    //     id: Math.floor(Math.random() * 100000),
+    //     content: "",
+    //   };
     
-      const noteElement = createNoteElement(noteObject.id, noteObject.content);
-      notesContainer.insertBefore(noteElement, addNoteButton);
+    //   const noteElement = createNoteElement(noteObject.id, noteObject.content);
+    //   notesContainer.insertBefore(noteElement, addNoteButton);
     
-      notes.push(noteObject);
-      saveNotes(notes);
-    }
+    //   notes.push(noteObject);
+    //   saveNotes(notes);
+    // }
     
     function updateNote(id, newContent) {
       const notes = getNotes();
@@ -73,18 +76,18 @@ const StickyNotes = () => {
       saveNotes(notes);
     }
     
-    function deleteNote(id, element) {
-      const notes = getNotes().filter((note) => note.id !== id);
+    // function deleteNote(id, element) {
+    //   const notes = getNotes().filter((note) => note.id !== id);
     
-      saveNotes(notes);
-      notesContainer.removeChild(element);
-    }
+    //   saveNotes(notes);
+    //   notesContainer.removeChild(element);
+    // }
 
   return (
     <div id="notes">
       
-        <textarea className = "note">Some sample text</textarea>
-        <button onClick={addNote} className = "add-note" type= "button">+</button>
+        <Textarea className = "note" placeholder="Enter game related notes here. Use handle on bottom right corner to resize vertically" w="30vw" variant="filled" resize={resize} ml={5} p={2}></Textarea>
+        {/* <button onClick={addNote} className = "add-note" type= "button">+</button> */}
 
     </div>
   )
