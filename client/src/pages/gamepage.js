@@ -4,7 +4,7 @@ import StickyNotes from '../components/StickyNotes';
 
 export default function Gamepage(){
   return (
-  <Flex>
+  <Flex justifyContent="space-between">
     <div>
     <Checkersboard/>
     <Text>
@@ -14,7 +14,7 @@ export default function Gamepage(){
       </Link>
     </Text>
     </div>
-    <StickyNotes />
+    <StickyNotes ml={2}/>
   </Flex>
   )
 }
