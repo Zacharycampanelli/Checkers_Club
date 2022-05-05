@@ -5,6 +5,7 @@ import Login from './login';
 import Signup from './signup';
 import { Text, Button, ButtonGroup, Image, Stack, Link } from '@chakra-ui/react';
 import checkerpieces from '../assets/checkerspieces.png';
+import checkerpieces2 from '../assets/checkerspieces2.png';
 
 const Homepage = () => {
   // const loggedIn = Auth.loggedIn();
@@ -23,7 +24,7 @@ const Homepage = () => {
               // className="homeGameButton"
             // href="/game"
             color="white"
-            fontSize="4em"
+            fontSize={{base : "1em", sm: "3em", lg: "4em"}}
             >
               START GAME!
             </Link>
@@ -35,7 +36,9 @@ const Homepage = () => {
           </>
         )}
       </Stack>
-      <Image src={checkerpieces} position="relative" bottom="150" float="right" boxSize={{base: "12em", lg: "20em"}} />
+      <br />
+      <Image src={checkerpieces2} position="relative" bottom={{base: "30", sm:"100" ,lg: "150"}} float="left" boxSize={{base: "8em", sm: "14em", lg: "20em"}} />
+      <Image src={checkerpieces} position="relative" bottom={{base: "30", sm:"100" ,lg: "150"}} float="right" boxSize={{base: "8em", sm: "14em", lg: "20em"}} />
     </main>
   );
 };

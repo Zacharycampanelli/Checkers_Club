@@ -22,7 +22,7 @@ const Header = () => {
         <nav>
           {Auth.loggedIn() ? (<>
           <Link to="/game">Play Checkers</Link>
-          </>) : (null)}
+          </>) : ("")}
           <Link to="/chat">Join A Chatroom</Link>
           <Link to="/scores">Leaderboards</Link>
           <Link to="/howto">How To Play</Link>
