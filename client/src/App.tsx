@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState 
+} from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
@@ -65,6 +66,7 @@ export default function App() {
           <Footer />
         </div>
       </Router>
-    </ApolloProvider></Box>
+    </ApolloProvider>
+    </Box>
   )
 };
