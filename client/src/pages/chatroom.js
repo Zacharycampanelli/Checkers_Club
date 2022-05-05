@@ -1,24 +1,26 @@
-// import './App.css';
-import io from 'socket.io-client';
-import { useState } from 'react';
-import Chat from '../components/Chat'
-const socket = io.connect('http://localhost:3001');
+import React, { useState } from 'react';
+import { Image } from '@chakra-ui/react';
+// import io from 'socket.io-client';
+// import Chat from '../components/Chat'
+// const socket = io.connect('http://localhost:3001');
+import Construction from '../assets/Under-Construction-Sign.png';
 
 function Chatroom() {
-  const [username, setUserName] = useState('');
-  const [room, setRoom] = useState('');
-  const [showChat, setShowChat] = useState(false);
+  // const [username, setUserName] = useState('');
+  // const [room, setRoom] = useState('');
+  // const [showChat, setShowChat] = useState(false);
 
-  const joinRoom = () => {
-    if (username !== '' && room !== '') {
-      socket.emit('join_room', room);
-      setShowChat(true);
-    }
-  };
+  // const joinRoom = () => {
+  //   if (username !== '' && room !== '') {
+  //     socket.emit('join_room', room);
+  //     setShowChat(true);
+  //   }
+  // };
 
   return (
     <div className="App">
-      {!showChat ? (
+      <Image src={Construction} />
+      {/* {!showChat ? (
         <div className="joinChatContainer">
           <h3>Join A Chat</h3>
           <input
@@ -39,7 +41,7 @@ function Chatroom() {
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
-      )}
+      )} */}
     </div>
   );
 }
