@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration'
-import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { extendTheme, ChakraProvider } from '@chakra-ui/react';
 
 const theme = extendTheme({
   semanticTokens: {
     colors: {
-      white: "#fff",
-      black: "#000",
-      red: "#c41f12",
-      grey: "#9c9c9c"
-
-    }
+      white: '#fff',
+      black: '#000',
+      red: '#c41f12',
+      grey: '#9c9c9c',
+      red: '#c22222',
+    },
   },
   components: {
     Button: {
@@ -22,7 +22,6 @@ const theme = extendTheme({
         bg: '',
         color: 'black',
         fontWeight: 'bold',
-  
       },
       sizes: {
         xl: {
@@ -31,28 +30,22 @@ const theme = extendTheme({
           px: '320px',
         },
       },
-    }
-  }
-})
-
-
-
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <ChakraProvider theme={theme}>
-    <App />
-  </ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
 
 serviceWorkerRegistration.register();
 
 reportWebVitals();
 
-  // </React.StrictMode>
-
-
+// </React.StrictMode>

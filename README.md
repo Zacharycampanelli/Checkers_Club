@@ -24,7 +24,9 @@ Clone this repository to your computer. Navigate to the root folder then run `np
 ## Usage
 From the root folder, run the command `npm start`. Also check out the deployed application on heroku with the link below.
 
-![screenshot](public/images/Screenshot_1.png)  
+![screenshot](client/src/assets/Screenshot_1.png)  
+![screenshot](client/src/assets/Screenshot_2.png)  
+![screenshot](client/src/assets/Screenshot_3.png)  
 
 
 ## License
@@ -50,7 +52,6 @@ Anyone is able to contribute to our project.
 
 - Game Logic
 - Payment for custom pieces with Stripe
-- *****NOTES****
 - Use socket.io to allow for playing the game using two computers
 - Video Chat Functionality
 - Chat Rooms
@@ -85,4 +86,4 @@ If you have any questions, concerns, or comments, feel free to contact us:
 
 ## Link to Deployed Application
 
--[Heroku](https://secure-hamlet-91004.herokuapp.com/game)
+-[Heroku](https://extreme-checkers-app.herokuapp.com/)

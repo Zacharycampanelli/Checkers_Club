@@ -7,7 +7,6 @@ import leftStack from '../assets/leftstack.png'
 import rightStack from '../assets/rightstack.png'
 const Login = (props) => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-  // const [validated] = useState(false);
   const [ setShowAlert] = useState(false);
   const [login, { error }] = useMutation(LOGIN_USER);
 

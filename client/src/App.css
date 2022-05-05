@@ -42,8 +42,7 @@
   font-family: 'bungee'
 }
 
-header {
-  background-color: white;
+#header {
   vertical-align: bottom;
 }
 
