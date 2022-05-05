@@ -1,56 +1,68 @@
 import './checkerboard.css';
 import Tile from '../Tile';
 
-
 const verticalAxis = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 const horizontalAxis = ['a','b','c','d','e','f','g','h'];
-const blackPiece = process.env.PUBLIC_URL +'assets/images/black.svg'
+
 interface Piece {
-  image: string
+  image: String
   x: number
   y: number
 }
 
 const pieces: Piece[] =[];
+//location of the pieces being rendered
+const red = require('../../assets/red.png')
+const black = require('../../assets/black.png')
+const redking = require('../../assets/redking.png')
+const blackking = require('../../assets/blackking.png')
 
 // starting position of the red checker pieces
 for(let i =0; i < 8; i++){
   //  row 5 from the y axis
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg', x: 1, y:5})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 3, y:5})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 5, y:5})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 7, y:5})
+  pieces.push({image:`${red}`,x: 1, y:5})
+  pieces.push({image:`${red}`,x: 3, y:5})
+  pieces.push({image:`${red}`,x: 5, y:5})
+  pieces.push({image:`${red}`,x: 7, y:5})
   //  row 6 from the y axis
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 0, y:6})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 2, y:6})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 4, y:6})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 6, y:6})
+  pieces.push({image:`${red}`,x: 0, y:6})
+  pieces.push({image:`${red}`,x: 2, y:6})
+  pieces.push({image:`${red}`,x: 4, y:6})
+  pieces.push({image:`${red}`,x: 6, y:6})
   //  row 7 from the y axis
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 1, y:7})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 3, y:7})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 5, y:7})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/red.svg',x: 7, y:7})
+  pieces.push({image:`${red}`,x: 1, y:7})
+  pieces.push({image:`${red}`,x: 3, y:7})
+  pieces.push({image:`${red}`,x: 5, y:7})
+  pieces.push({image:`${red}`,x: 7, y:7})
+  // red king pieces
+  pieces.push({image:`${redking}`,x: 2, y:7})
+  pieces.push({image:`${redking}`,x: 4, y:7})
+  pieces.push({image:`${redking}`,x: 6, y:7})
+  pieces.push({image:`${redking}`,x: 0, y:7})
 }
 //  starting position of the black checker pieces
 for(let i =0; i < 8; i++){
   // row 2 from y axis
-  pieces.push({image: blackPiece,x: 0, y:2})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 2, y:2})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 4, y:2})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 6, y:2})
+  pieces.push({image:`${black}`,x: 0, y:2})
+  pieces.push({image:`${black}`,x: 2, y:2})
+  pieces.push({image:`${black}`,x: 4, y:2})
+  pieces.push({image:`${black}`,x: 6, y:2})
   // row 1 from y axis
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 1, y:1})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 3, y:1})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 5, y:1})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 7, y:1})
+  pieces.push({image:`${black}`,x: 1, y:1})
+  pieces.push({image:`${black}`,x: 3, y:1})
+  pieces.push({image:`${black}`,x: 5, y:1})
+  pieces.push({image:`${black}`,x: 7, y:1})
   // row 0 from y axis
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 0, y:0})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 2, y:0})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 4, y:0})
-  pieces.push({image:process.env.PUBLIC_URL +'assets/images/black.svg',x: 6, y:0})
+  pieces.push({image:`${black}`,x: 0, y:0})
+  pieces.push({image:`${black}`,x: 2, y:0})
+  pieces.push({image:`${black}`,x: 4, y:0})
+  pieces.push({image:`${black}`,x: 6, y:0})
+  //black king pieces 
+  pieces.push({image:`${blackking}`,x: 1, y:0})
+  pieces.push({image:`${blackking}`,x: 3, y:0})
+  pieces.push({image:`${blackking}`,x: 5, y:0})
+  pieces.push({image:`${blackking}`,x: 7, y:0})
 }
-
-
 
 export default function Checkersboard () {
   // Movement of the Pieces
@@ -82,7 +94,6 @@ export default function Checkersboard () {
   }
 
   //drop piece
-
   function dropPiece(e: React.MouseEvent){
     if(activePiece){
       activePiece = null;
